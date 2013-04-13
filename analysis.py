@@ -20,7 +20,7 @@ def get_hhi(dframe):
     dframeHHI.index = DatetimeIndex(dframeHHI.pop('month'))
     return dframeHHI['hhi']
 
-if __name__ == '__main__':
-    countries = ['US', 'CA', 'GB', 'FR', 'CN', 'RU', 'DE']
-    data = {country: get_hhi(makeDataFrame(country)) for country in countries}
-    bigdf = DataFrame(data)
+countries = ['US', 'CA', 'GB', 'FR', 'CN', 'RU', 'DE']
+data = {country: get_hhi(makeDataFrame(country)) for country in countries}
+bigdf = DataFrame(data)
+bigdf.plot()
